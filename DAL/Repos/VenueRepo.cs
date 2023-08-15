@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    public class VenueRepo : Repo, IRepo<Venue, int, bool>
+    internal class VenueRepo : Repo, IRepo<Venue, int, bool>
     {
         public bool Add(Venue obj)
         {
@@ -23,6 +23,11 @@ namespace DAL.Repos
             return db.SaveChanges() > 0;
         }
 
+        public bool Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Venue> Get()
         {
             return db.Venues.ToList();
@@ -31,6 +36,11 @@ namespace DAL.Repos
         public Venue Get(int id)
         {
             return db.Venues.Find(id);
+        }
+
+        public object GetAll()
+        {
+            throw new NotImplementedException();
         }
 
         public bool Update(Venue obj)

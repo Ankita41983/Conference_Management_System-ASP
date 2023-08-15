@@ -23,6 +23,11 @@ namespace DAL.Repos
             return db.SaveChanges() > 0;
         }
 
+        public bool Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Auditorium> Get()
         {
             return db.Auditoriums.ToList();
@@ -31,6 +36,11 @@ namespace DAL.Repos
         public Auditorium Get(int id)
         {
             return db.Auditoriums.Find(id);
+        }
+
+        public object GetAll()
+        {
+            throw new NotImplementedException();
         }
 
         public bool Update(Auditorium obj)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-   public class Repo
+   internal class Repo
     {
         internal AppDbContext db;
         internal Repo()

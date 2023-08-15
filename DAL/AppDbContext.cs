@@ -12,5 +12,10 @@ namespace DAL
     {
         public DbSet<Auditorium> Auditoriums { get; set; }
         public DbSet<Venue> Venues { get; set; }
+
+        public static object VenueData()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
