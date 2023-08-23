@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6157763E-9CB4-49CC-AD18-0834B3D545CD}</ProjectGuid>
+    <ProjectGuid>{3A899AFE-5F3E-4616-AD76-136D2F882D36}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DAL</RootNamespace>
@@ -51,20 +51,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppDbContext.cs" />
-    <Compile Include="Comment.cs" />
     <Compile Include="DataAccess.cs" />
-    <Compile Include="Interface\IRepo.cs" />
-    <Compile Include="Migrations\202308131550222_databse_initalized.cs" />
-    <Compile Include="Migrations\202308131550222_databse_initalized.designer.cs">
-      <DependentUpon>202308131550222_databse_initalized.cs</DependentUpon>
+    <Compile Include="EF\ConferenceContext.cs" />
+    <Compile Include="EF\Models\Auditorium.cs" />
+    <Compile Include="EF\Models\Seat.cs" />
+    <Compile Include="EF\Models\Staff.cs" />
+    <Compile Include="EF\Models\Ticket.cs" />
+    <Compile Include="EF\Models\User.cs" />
+    <Compile Include="EF\Models\Venue.cs" />
+    <Compile Include="Interfaces\IRepo.cs" />
+    <Compile Include="Migrations\202308151558200_dbinit.cs" />
+    <Compile Include="Migrations\202308151558200_dbinit.designer.cs">
+      <DependentUpon>202308151558200_dbinit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308161715342_TicketUser_added.cs" />
+    <Compile Include="Migrations\202308161715342_TicketUser_added.designer.cs">
+      <DependentUpon>202308161715342_TicketUser_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308201521566_SeatEntityAdded.cs" />
+    <Compile Include="Migrations\202308201521566_SeatEntityAdded.designer.cs">
+      <DependentUpon>202308201521566_SeatEntityAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Auditorium.cs" />
-    <Compile Include="Models\Venue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\AuditoriumRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
+    <Compile Include="Repos\SeatRepo.cs" />
+    <Compile Include="Repos\StaffRepo.cs" />
+    <Compile Include="Repos\TicketRepo.cs" />
+    <Compile Include="Repos\UserRepo.cs" />
     <Compile Include="Repos\VenueRepo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -72,11 +87,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202308131550222_databse_initalized.resx">
-      <DependentUpon>202308131550222_databse_initalized.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202308151558200_dbinit.resx">
+      <DependentUpon>202308151558200_dbinit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308161715342_TicketUser_added.resx">
+      <DependentUpon>202308161715342_TicketUser_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308201521566_SeatEntityAdded.resx">
+      <DependentUpon>202308201521566_SeatEntityAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

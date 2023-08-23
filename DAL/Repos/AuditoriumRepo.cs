@@ -1,5 +1,6 @@
-﻿using DAL.Interface;
-using DAL.Models;
+﻿using DAL.EF;
+using DAL.EF.Models;
+using DAL.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,10 +24,6 @@ namespace DAL.Repos
             return db.SaveChanges() > 0;
         }
 
-        public bool Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
 
         public List<Auditorium> Get()
         {
@@ -38,19 +35,10 @@ namespace DAL.Repos
             return db.Auditoriums.Find(id);
         }
 
-        public object GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
         public bool Update(Auditorium obj)
         {
-            var auditorium = (from aud in db.Auditoriums
-                              where aud.Id == obj.Id
-                              select aud).SingleOrDefault();
-
-            
-            auditorium.Capacity = obj.Capacity;
+            var aud = Get(obj.Id);
+            db.Entry(aud).CurrentValues.SetValues(obj);
             return db.SaveChanges() > 0;
         }
     }

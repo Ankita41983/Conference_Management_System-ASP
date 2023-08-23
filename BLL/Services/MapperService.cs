@@ -1,12 +1,39 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace BLL.Services
 {
-    internal class MapperService<T1, T2>
+    public class MapperService<Src, Dest>
     {
-        internal static object GetMapper()
+        public static Mapper GetMapper()
         {
-            throw new NotImplementedException();
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Src, Dest>();
+            }
+            );
+            var mapper = new Mapper(config);
+            return mapper;
         }
-    }
+     }
 }
+
+/*{
+    "Name" : "ANkita",
+    "Email" : "a@ex.com",
+    //key     value
+}*/
+/*{
+    "Name" : "ANkita",
+    "Email" : "a@ex.com",
+    //key     value
+}*/
+/*{
+    "Name" : "ANkita",
+    "Email" : "a@ex.com",
+    //key     value
+}*/

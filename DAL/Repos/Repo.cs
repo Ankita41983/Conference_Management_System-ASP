@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.EF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-   internal class Repo
+    internal class Repo
     {
-        internal AppDbContext db;
+        internal ConferenceContext db;
         internal Repo()
         {
-            db = new AppDbContext();
+            db = new ConferenceContext();
         }
     }
 }

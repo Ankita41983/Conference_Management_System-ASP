@@ -1,5 +1,5 @@
-﻿using DAL.Interface;
-using DAL.Models;
+﻿using DAL.EF.Models;
+using DAL.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,13 +45,8 @@ namespace DAL.Repos
 
         public bool Update(Venue obj)
         {
-            var venue = (from v in db.Venues
-                              where v.Id == obj.Id
-                              select v).SingleOrDefault();
-
-            venue.Name = obj.Name;
-            venue.Location = obj.Location;
-            venue.Capacity = obj.Capacity;
+            var venue = Get(obj.Id);
+            db.Entry(venue).CurrentValues.SetValues(obj);
             return db.SaveChanges() > 0;
         }
     }

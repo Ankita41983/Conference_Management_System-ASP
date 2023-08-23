@@ -1,101 +1,48 @@
-﻿using AutoMapper;
-using BLL.DTOs;
+﻿using BLL.DTOs;
 using DAL;
-using DAL.Models;
+using DAL.EF.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
+
+
 namespace BLL.Services
 {
     public class AuditoriumService
     {
-        
-            private IMapper _mapper;
-
-            public AuditoriumService(IMapper mapper)
-            {
-                _mapper = mapper;
-            }
-
-            public List<AuditoriumDTO> GetAll()
-            {
-                var data = DataAccess.AuditoriumData().Get();
-                var AuditoriumDTOs = _mapper.Map<List<AuditoriumDTO>>(data);
-                return AuditoriumDTOs;
-            }
-
-            public AuditoriumDTO GetById(int id, AuditoriumDTO auditoriumDTO)
-            {
-                var data = DataAccess.AuditoriumData().Get(id);
-                var AuditoriumDTOs = _mapper.Map<AuditoriumDTO>(data);
-            return auditoriumDTO;
-            }
-
-            public bool AddVenue(VenueDTO venueDTO)
-            {
-                var venue = _mapper.Map<Venue>(venueDTO);
-                return DataAccess.VenueData().Add(venue);
-            }
-
-            public bool UpdateVenue(VenueDTO venueDTO)
-            {
-                var venue = _mapper.Map<Venue>(venueDTO);
-                return UpdateVenue(venue);
-            }
-
-            private bool UpdateVenue(Venue venue)
-            {
-                throw new NotImplementedException();
-            }
-
-            public bool DeleteVenue(int id)
-            {
-                return DataAccess.VenueData().DELETE(id);
-            }
+        public static List<AuditoriumDTO> Get()
+        {
+            var data = DataAccess.AuditoriumData().Get();
+            var map = MapperService<Auditorium, AuditoriumDTO>.GetMapper();
+            return map.Map<List<AuditoriumDTO>>(data);
         }
 
-        internal class AService
-    {
-            private IMapper _mapper;
-            private object venueDTO;
+        public static AuditoriumDTO Get(int id)
+        {
+            var data = DataAccess.AuditoriumData().Get(id);
+            var map = MapperService<Auditorium, AuditoriumDTO>.GetMapper();
+            return map.Map<AuditoriumDTO>(data);
+        }
 
-            internal AService(IMapper mapper)
-            {
-                _mapper = mapper;
-            }
+        public static bool Add(AuditoriumDTO Auditorium)
+        {
+            var mapper = MapperService<AuditoriumDTO, Auditorium>.GetMapper();
+            var map = mapper.Map<Auditorium>(Auditorium);
+            return DataAccess.AuditoriumData().Add(map);
+        }
 
-            internal List<AuditoriumDTO> Get()
-            {
-                var data = DataAccess.AuditoriumData().GetAll();
-                var AuditoriumDTOs = _mapper.Map<List<AuditoriumDTO>>(data);
-                return AuditoriumDTOs;
-            }
+        public static bool Update(AuditoriumDTO Auditorium)
+        {
+            var mapper = MapperService<AuditoriumDTO, Auditorium>.GetMapper();
+            var map = mapper.Map<Auditorium>(Auditorium);
+            return DataAccess.AuditoriumData().Update(map);
+        }
 
-            public AuditoriumDTO GetById(int id)
-            {
-                var data = DataAccess.AuditoriumData().Get(id);
-                var AuditoriumDTO = _mapper.Map<AuditoriumDTO>(data);
-                return AuditoriumDTO;
-            }
-
-            public bool AddAuditorium(AuditoriumDTO AuditoriumDTO)
-            {
-                var Auditorium = _mapper.Map<Auditorium>(AuditoriumDTO);
-                return DataAccess.AuditoriumData().Add(Auditorium);
-            }
-
-        public bool UpdateAuditorium(AuditoriumDTO AuditoriumDTO)
-            {
-                var Auditorium = _mapper.Map<Auditorium>(AuditoriumDTO);
-                return DataAccess.AuditoriumData().Update(Auditorium);
-            }
-
-            public bool DeleteAuditorium(int id)
-            {
-                return DataAccess.AuditoriumData().Delete(id);
-            }
+        public static bool Delete(int id)
+        {
+            return DataAccess.AuditoriumData().DELETE(id);
         }
     }
+}
