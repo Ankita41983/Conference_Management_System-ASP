@@ -41,5 +41,12 @@ namespace DAL.Repos
             db.Entry(aud).CurrentValues.SetValues(obj);
             return db.SaveChanges() > 0;
         }
+
+        public List<Auditorium> AudByVenue()
+        {
+            var auditorium = (from a in db.Auditoriums
+                              select a).ToList();
+            return auditorium;
+        }
     }
 }

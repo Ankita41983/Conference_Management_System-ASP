@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// SOLID 
 
 namespace BLL.Services
 {
@@ -26,6 +27,23 @@ namespace BLL.Services
             return map.Map<SeatDTO>(data);
         }
 
-        
+        public static bool Add(SeatDTO Seat)
+        {
+            var mapper = MapperService<SeatDTO, Seat>.GetMapper();
+            var map = mapper.Map<Seat>(Seat);
+            return DataAccess.SeatData().Add(map);
+        }
+
+        public static bool Update(SeatDTO seat)
+        {
+            var mapper = MapperService<SeatDTO, Seat>.GetMapper();
+            var map = mapper.Map<Seat>(seat);
+            return DataAccess.SeatData().Update(map);
+        }
+
+        public static bool Delete(int id)
+        {
+            return DataAccess.SeatData().DELETE(id);
         }
     }
+}

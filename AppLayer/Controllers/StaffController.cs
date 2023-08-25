@@ -13,6 +13,21 @@ namespace AppLayer.Controllers
     public class StaffController : ApiController
     {
         [HttpGet]
+        [Route("dashboard")]
+        public HttpResponseMessage Dashboard()
+        {
+            try
+            {
+                var data = AuditoriumService.Get();
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Msg = ex.Message });
+            }
+        }
+
+        [HttpGet]
         [Route("all")]
         public HttpResponseMessage AllStaff()
         {
