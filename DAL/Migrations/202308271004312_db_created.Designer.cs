@@ -7,13 +7,13 @@ namespace DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class SeatEntityAdded : IMigrationMetadata
+    public sealed partial class db_created : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(SeatEntityAdded));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(db_created));
         
         string IMigrationMetadata.Id
         {
-            get { return "202308201521566_SeatEntityAdded"; }
+            get { return "202308271004312_db_created"; }
         }
         
         string IMigrationMetadata.Source

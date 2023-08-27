@@ -22,9 +22,11 @@ namespace DAL.EF.Models
         public int Capacity { get; set; }
 
         public virtual ICollection<Auditorium> Auditoriums { get; set; }
+        public virtual ICollection<Staff> Staffs { get; set; }
         public Venue()
         {
             Auditoriums = new List<Auditorium>();
+            Staffs = new List<Staff>();
         }
     }
 }

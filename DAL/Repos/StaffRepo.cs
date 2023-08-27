@@ -3,17 +3,34 @@ using DAL.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class StaffRepo : Repo, IRepo<Staff, int, bool>
+    internal class StaffRepo : Repo, IRepo<Staff, int, bool>, IPass<bool>
     {
         public bool Add(Staff obj)
         {
+            var login = new Login();
+            login.Email = obj.Email;
+            login.Password = obj.Password;
+            db.Logins.Add(login);
+            db.SaveChanges();
+
             db.Staffs.Add(obj);
             return db.SaveChanges() > 0;
+        }
+
+        public bool ChangePassword(string oldPassword, string newPassword, string rePassword)
+        {
+            
+            /*var user = (from login in db.Logins
+                        where login.Password == oldPassword
+                        select login).sin*/
+            return true;
         }
 
         public bool DELETE(int id)

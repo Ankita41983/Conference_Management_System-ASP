@@ -7,13 +7,13 @@ namespace DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class dbinit : IMigrationMetadata
+    public sealed partial class login_created : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(dbinit));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(login_created));
         
         string IMigrationMetadata.Id
         {
-            get { return "202308151558200_dbinit"; }
+            get { return "202308271501147_login_created"; }
         }
         
         string IMigrationMetadata.Source

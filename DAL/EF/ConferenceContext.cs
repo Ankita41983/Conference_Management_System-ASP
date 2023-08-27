@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL.EF
 {
-    internal class ConferenceContext: DbContext
+    public class ConferenceContext: DbContext
     {
         public DbSet<Auditorium> Auditoriums { get; set; }
         public DbSet<Venue> Venues { get; set; }
@@ -16,6 +16,7 @@ namespace DAL.EF
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Seat> Seats { get; set; }
+        public DbSet<Login> Logins { get; set; }
 
 
     }

@@ -18,7 +18,7 @@ namespace BLL.Services
             var map = MapperService<Auditorium, AuditoriumDTO>.GetMapper();
             return map.Map<List<AuditoriumDTO>>(data);
         }
-
+        
         public static AuditoriumDTO Get(int id)
         {
             var data = DataAccess.AuditoriumData().Get(id);

@@ -22,5 +22,8 @@ namespace BLL.DTOs
         public string Address { get; set; }
         [Required]
         public string Password { get; set; }
+
+        [Required]
+        public int Venue_id { get; set; }
     }
 }

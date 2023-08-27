@@ -16,11 +16,13 @@ namespace DAL.EF.Models
 
         [Required]
         public string Row { get; set; }
+
         [Required]
         public bool Type { get; set; }
-        [ForeignKey("Staff")]
-        public int Staff_id { get; set; }
-        public virtual Staff Staff { get; set; }
+
+        [ForeignKey("Auditorium")]
+        public int Auditorium_id { get; set; }
+        public virtual Auditorium Auditorium { get; set; }
 
     }
 }

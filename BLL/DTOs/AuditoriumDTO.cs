@@ -12,11 +12,8 @@ namespace BLL.DTOs
     public class AuditoriumDTO
     {
         public int Id { get; set; }
-
-        [Required]
         public int Venue_id { get; set; }
-
-        [Required]
         public int Capacity { get; set; }
+        public string Name { get; set; }
     }
 }

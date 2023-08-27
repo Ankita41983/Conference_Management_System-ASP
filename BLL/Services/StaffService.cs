@@ -1,5 +1,6 @@
 ﻿using BLL.DTOs;
 using DAL;
+using DAL.EF;
 using DAL.EF.Models;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,12 @@ namespace BLL.Services
 {
     public class StaffService
     {
+        public static bool ForgetPassword()
+        {
+
+            return true;
+        }
+
         public static List<StaffDTO> Get()
         {
             var data = DataAccess.StaffData().Get();// list of staff

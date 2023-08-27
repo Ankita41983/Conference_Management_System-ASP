@@ -10,7 +10,7 @@ D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.csproj.CoreCompileInpu
 D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.dll
 D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.pdb
-D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.Migrations.dbinit.resources
+D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.Migrations.db_created.resources
 D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
-D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.Migrations.TicketUser_added.resources
-D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.Migrations.SeatEntityAdded.resources
+D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.Migrations.audtorium_name_added.resources
+D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.Migrations.login_created.resources

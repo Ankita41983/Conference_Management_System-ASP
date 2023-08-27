@@ -16,6 +16,6 @@ namespace BLL.DTOs
         public string Row { get; set; }
         [Required]
         public bool Type { get; set; }
-        public int Staff_id { get; set; }
+        public int Auditorium_id { get; set; }
     }
 }
