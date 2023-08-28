@@ -8,28 +8,16 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class LoginRepo : Repo, IAuth<object, Login>
+    internal class LoginRepo : Repo, IAuth
     {
-        public object Authenticate(Login data)
+        public Login Authenticate(string email, string pass)
         {
-            var user = (from login in db.Logins
-                        where login.Email == data.Email && login.Password == data.Password
-                        select login).SingleOrDefault();
-
-            if (user != null)
-            {
-                var staff = (from s in db.Staffs
-                             where s.Email == user.Email
-                             select new
-                             {
-                                 s.Id, s.Name, s.Email, s.Gender, s.Phone, s.Address, s.Venue_id
-                             }).SingleOrDefault();
-
-                return new { staff = staff, message = "Login Successfull", status = true };
-            }
-
-            else
-                return new { staff = "Null", message = "User email or password incorrect", status = false };
+            var user = from u in db.Logins
+                       where u.Email.Equals(email)
+                       && u.Password.Equals(pass)
+                       select u;
+            if (user != null) return user.SingleOrDefault();
+            return null;
         }
     }
 }

@@ -29,9 +29,13 @@ namespace DAL
         {
             return new VenueRepo();
         }
-        public static IAuth<object, Login> LoginData()
+        public static IAuth AuthData()
         {
             return new LoginRepo();
+        }
+        public static IRepo<Token, int, Token> TokensData()
+        {
+            return new TokenRepo();
         }
     }
 }

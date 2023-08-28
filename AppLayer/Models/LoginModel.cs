@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace BLL.DTOs
+namespace AppLayer.Models
 {
-    public class LoginDTO
+    public class LoginModel
     {
-        public int Id { set; get; }
         public string Email { get; set; }
         public string Password { get; set; }
     }

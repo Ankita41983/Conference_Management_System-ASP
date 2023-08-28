@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.EF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Interfaces
 {
-    public interface IAuth<RET, TYPE>
+    public interface IAuth
     {
-        RET Authenticate(TYPE login);
+        Login Authenticate(string email, string pass);
     }
 }

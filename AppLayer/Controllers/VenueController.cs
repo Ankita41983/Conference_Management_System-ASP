@@ -29,11 +29,11 @@ namespace AppLayer.Controllers
 
         [HttpGet]
         [Route("get/{id}")]
-        public HttpResponseMessage GetVenue(int Id)
+        public HttpResponseMessage GetVenue(int id)
         {
             try
             {
-                var data = VenueService.Get();
+                var data = VenueService.Get(id);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -44,11 +44,11 @@ namespace AppLayer.Controllers
 
         [HttpGet]
         [Route("Create")]
-        public HttpResponseMessage CreateVenue(int id)
+        public HttpResponseMessage CreateVenue(VenueDTO venue)
         {
             try
             {
-                var data = StaffService.Get(id);
+                var data = VenueService.Add(venue);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -60,11 +60,11 @@ namespace AppLayer.Controllers
 
         [HttpPost]
         [Route("update/{id}")]
-        public HttpResponseMessage UpdateVenue(int id, VenueDTO obj)
+        public HttpResponseMessage UpdateVenue( VenueDTO obj)
         {
             try
             {
-                var data = VenueService.Add( obj);
+                var data = VenueService.Update(obj);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -87,6 +87,6 @@ namespace AppLayer.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Msg = ex.Message });
             }
         }
-        
+
     }
 }

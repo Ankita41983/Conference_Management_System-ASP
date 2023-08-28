@@ -13,12 +13,9 @@ namespace DAL.EF
         public DbSet<Auditorium> Auditoriums { get; set; }
         public DbSet<Venue> Venues { get; set; }
         public DbSet<Staff> Staffs { get; set; }
-        public DbSet<Ticket> Tickets { get; set; }
-        public DbSet<User> Users { get; set; }
         public DbSet<Seat> Seats { get; set; }
         public DbSet<Login> Logins { get; set; }
         public DbSet<PassOTP> PassOTPs { get; set; }
-
-
+        public DbSet<Token> Tokens { get; set; }
     }
 }

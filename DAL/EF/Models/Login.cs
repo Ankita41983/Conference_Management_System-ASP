@@ -10,7 +10,6 @@ namespace DAL.EF.Models
     public class Login
     {
         [Key]
-        public int Id { set; get; }
         public string Email { get; set; }
         public string Password { get; set; }
     }

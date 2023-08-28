@@ -1,4 +1,5 @@
-﻿using BLL.DTOs;
+﻿using AppLayer.Models;
+using BLL.DTOs;
 using BLL.Services;
 using System;
 using System.Collections.Generic;
@@ -12,18 +13,20 @@ namespace AppLayer.Controllers
     public class LoginController : ApiController
     {
         [HttpPost]
-        [Route("login")]
-        public HttpResponseMessage Login(LoginDTO login)
+        [Route("api/login")]
+        public HttpResponseMessage Login(LoginModel data)
         {
-            try
+            var token = LoginService.Login(data.Email, data.Password);
+            if (token != null)
             {
-                var user = LoginService.Authenticate(login);
-                return Request.CreateResponse(new { user });
+                return Request.CreateResponse(HttpStatusCode.OK, token);
             }
-            catch (Exception ex)
+            else
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Msg = ex.Message });
+                return Request.CreateResponse(HttpStatusCode.NotFound, new { Msg = "User not found" });
             }
+
+
         }
     }
 }

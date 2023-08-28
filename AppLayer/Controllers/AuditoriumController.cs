@@ -26,12 +26,12 @@ namespace AppLayer.Controllers
         }
 
         [HttpGet]
-        [Route("venue/{venueId}")]
-        public HttpResponseMessage GetAuditoriumsByVenue(int venueId)
+        [Route("all")]
+        public HttpResponseMessage GetAuditoriums()
         {
             try
             {
-                var data = AuditoriumService.Get(venueId);
+                var data = AuditoriumService.Get();
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -56,7 +56,7 @@ namespace AppLayer.Controllers
         }
 
         [HttpPut]
-        [Route("update/{id}")]
+        [Route("update")]
         public HttpResponseMessage UpdateAuditorium(AuditoriumDTO auditorium)
         {
             try

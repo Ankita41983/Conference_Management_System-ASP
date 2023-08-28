@@ -58,11 +58,9 @@
     <Compile Include="EF\Models\PassOTP.cs" />
     <Compile Include="EF\Models\Seat.cs" />
     <Compile Include="EF\Models\Staff.cs" />
-    <Compile Include="EF\Models\Ticket.cs" />
-    <Compile Include="EF\Models\User.cs" />
+    <Compile Include="EF\Models\Token.cs" />
     <Compile Include="EF\Models\Venue.cs" />
     <Compile Include="Interfaces\IAuth.cs" />
-    <Compile Include="Interfaces\IPass.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
     <Compile Include="Migrations\202308271004312_db_created.cs" />
     <Compile Include="Migrations\202308271004312_db_created.designer.cs">
@@ -80,6 +78,10 @@
     <Compile Include="Migrations\202308280721228_otp.designer.cs">
       <DependentUpon>202308280721228_otp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202308281022511_Token_created.cs" />
+    <Compile Include="Migrations\202308281022511_Token_created.designer.cs">
+      <DependentUpon>202308281022511_Token_created.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\AuditoriumRepo.cs" />
@@ -88,8 +90,7 @@
     <Compile Include="Repos\Repo.cs" />
     <Compile Include="Repos\SeatRepo.cs" />
     <Compile Include="Repos\StaffRepo.cs" />
-    <Compile Include="Repos\TicketRepo.cs" />
-    <Compile Include="Repos\UserRepo.cs" />
+    <Compile Include="Repos\TokenRepo.cs" />
     <Compile Include="Repos\VenueRepo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -108,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308280721228_otp.resx">
       <DependentUpon>202308280721228_otp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308281022511_Token_created.resx">
+      <DependentUpon>202308281022511_Token_created.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

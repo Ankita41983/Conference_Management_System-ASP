@@ -15,3 +15,4 @@ D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.csproj.GenerateResourc
 D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.Migrations.audtorium_name_added.resources
 D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.Migrations.login_created.resources
 D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.Migrations.otp.resources
+D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.Migrations.Token_created.resources
