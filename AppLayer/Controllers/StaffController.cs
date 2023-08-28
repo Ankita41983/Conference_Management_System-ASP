@@ -1,6 +1,7 @@
 ﻿using BLL.DTOs;
 using BLL.Services;
 using DAL.EF;
+using DAL.EF.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace AppLayer.Controllers
     [RoutePrefix("api/staff")]
     public class StaffController : ApiController
     {
-        [HttpGet]
+        [HttpPost]
         [Route("forgetPassword")] // featured api - 2
         public HttpResponseMessage ForgetPassword(ForgetPassDTO fp)
         {
@@ -24,6 +25,7 @@ namespace AppLayer.Controllers
                 var staff = (from s in db.Staffs
                              where s.Email == fp.Email
                              select s).SingleOrDefault();
+
                 if (staff != null)
                 {
                     System.Random random = new System.Random();
@@ -34,9 +36,9 @@ namespace AppLayer.Controllers
 
                     MailMessage message = new MailMessage();
                     message.From = new MailAddress(fromMail);
-                    message.Subject = "Test Subject";
+                    message.Subject = "Forget Password for CMS";
                     message.To.Add(new MailAddress(staff.Email));
-                    message.Body = "<html><body> Your OTP is <br><h2>" + OTP + "</h2> <br> </body></html>";
+                    message.Body = "<html><body> Your OTP for reser password is <br><h2>" + OTP + "</h2> <br><br>Copyright 2023, Conference Management System </body></html>";
                     message.IsBodyHtml = true;
 
                     var smtpClient = new SmtpClient("smtp.gmail.com")
@@ -47,9 +49,29 @@ namespace AppLayer.Controllers
                     };
 
                     smtpClient.Send(message);
+
+                    var pass = new PassOTP();
+                    pass.Email = fp.Email;
+                    pass.OTP = OTP;
+                    StaffService.ForgetPass(pass);
                     return Request.CreateResponse(new { message = "Sent..." });
                 }
-                return Request.CreateResponse(new { message = "Sent..." });
+                return Request.CreateResponse(new { message = "not sent..." });
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Msg = ex.Message });
+            }
+        }
+
+        [HttpPost]
+        [Route("forgetPassword/verify")] // featured api - 2
+        public HttpResponseMessage VarifyOTP(ForgetPassDTO obj)
+        {
+            try
+            {
+                var data = StaffService.Verify(obj);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
             {

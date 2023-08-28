@@ -12,3 +12,6 @@ D:\asp.net\Conference Management System\BLL\obj\Debug\BLL.dll
 D:\asp.net\Conference Management System\BLL\obj\Debug\BLL.pdb
 D:\asp.net\Conference Management System\BLL\bin\Debug\AutoMapper.dll
 D:\asp.net\Conference Management System\BLL\bin\Debug\AutoMapper.xml
+D:\asp.net\Conference Management System\BLL\bin\Debug\BLL.dll.config
+D:\asp.net\Conference Management System\BLL\bin\Debug\EntityFramework.SqlServer.dll
+D:\asp.net\Conference Management System\BLL\bin\Debug\EntityFramework.SqlServer.xml

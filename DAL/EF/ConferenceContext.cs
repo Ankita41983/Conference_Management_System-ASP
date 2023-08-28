@@ -17,6 +17,7 @@ namespace DAL.EF
         public DbSet<User> Users { get; set; }
         public DbSet<Seat> Seats { get; set; }
         public DbSet<Login> Logins { get; set; }
+        public DbSet<PassOTP> PassOTPs { get; set; }
 
 
     }

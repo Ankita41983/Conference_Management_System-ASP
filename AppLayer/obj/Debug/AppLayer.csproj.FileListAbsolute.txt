@@ -76,3 +76,4 @@ D:\asp.net\Conference Management System\AppLayer\bin\DAL.dll.config
 D:\asp.net\Conference Management System\AppLayer\bin\EntityFramework.xml
 D:\asp.net\Conference Management System\AppLayer\bin\EntityFramework.SqlServer.dll
 D:\asp.net\Conference Management System\AppLayer\bin\EntityFramework.SqlServer.xml
+D:\asp.net\Conference Management System\AppLayer\bin\BLL.dll.config

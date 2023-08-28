@@ -9,7 +9,7 @@ namespace BLL.DTOs
     public class ForgetPassDTO
     {
         public string Email { set; get; }
-        public string OTP { set; get; }
+        public int OTP { set; get; }
         public string Password { set; get; }
     }
 }

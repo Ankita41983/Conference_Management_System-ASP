@@ -55,6 +55,7 @@
     <Compile Include="EF\ConferenceContext.cs" />
     <Compile Include="EF\Models\Auditorium.cs" />
     <Compile Include="EF\Models\Login.cs" />
+    <Compile Include="EF\Models\PassOTP.cs" />
     <Compile Include="EF\Models\Seat.cs" />
     <Compile Include="EF\Models\Staff.cs" />
     <Compile Include="EF\Models\Ticket.cs" />
@@ -75,9 +76,14 @@
     <Compile Include="Migrations\202308271501147_login_created.designer.cs">
       <DependentUpon>202308271501147_login_created.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202308280721228_otp.cs" />
+    <Compile Include="Migrations\202308280721228_otp.designer.cs">
+      <DependentUpon>202308280721228_otp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\AuditoriumRepo.cs" />
+    <Compile Include="Repos\ForgetPassRepo.cs" />
     <Compile Include="Repos\LoginRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
     <Compile Include="Repos\SeatRepo.cs" />
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308271501147_login_created.resx">
       <DependentUpon>202308271501147_login_created.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308280721228_otp.resx">
+      <DependentUpon>202308280721228_otp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

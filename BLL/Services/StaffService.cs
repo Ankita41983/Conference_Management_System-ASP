@@ -2,6 +2,7 @@
 using DAL;
 using DAL.EF;
 using DAL.EF.Models;
+using DAL.Repos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,32 @@ namespace BLL.Services
 {
     public class StaffService
     {
-        public static bool ForgetPassword()
+        public static bool ForgetPass(PassOTP obj)
         {
+            return ForgetPassRepo.SetOTP(obj);
+        }
 
-            return true;
+        public static bool Verify(ForgetPassDTO obj)
+        {
+            var db = new ConferenceContext();
+            var isValidUser = (from data in db.PassOTPs
+                           where data.OTP == obj.OTP
+                           select data).SingleOrDefault();
+
+            var staff = (from s in db.Staffs
+                         where isValidUser.Email == s.Email
+                         select s).SingleOrDefault();
+
+            if (isValidUser != null)
+            {
+                staff.Password = obj.Password;
+                db.SaveChanges();
+
+                db.PassOTPs.Remove(isValidUser);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
         }
 
         public static List<StaffDTO> Get()
