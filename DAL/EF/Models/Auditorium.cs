@@ -14,14 +14,14 @@ namespace DAL.EF.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Name should not be empty!")]
-        public string Name { get; set; }
+        public string A_Name { get; set; }
 
         [ForeignKey("Venue")]
         public int Venue_id { get; set; }
         public virtual Venue Venue { get; set; }
 
         [Required(ErrorMessage = "Capacity should not be empty!")]
-        public int Capacity { get; set; }
+        public int A_Capacity { get; set; }
 
         public virtual ICollection<Seat> Seats { get; set; }
         public Auditorium()

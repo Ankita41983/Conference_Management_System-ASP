@@ -16,3 +16,4 @@ D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.Migrations.audtorium_n
 D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.Migrations.login_created.resources
 D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.Migrations.otp.resources
 D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.Migrations.Token_created.resources
+D:\asp.net\Conference Management System\DAL\obj\Debug\DAL.Migrations.auditorium_column_edited.resources

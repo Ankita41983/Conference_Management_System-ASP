@@ -13,11 +13,18 @@ namespace DAL.Repos
     {
         public bool Add(Auditorium obj)
         {
+            var venue = (from v in db.Venues
+                         where v.Id == obj.Venue_id
+                         select v).SingleOrDefault();
+
+            venue.Capacity += obj.A_Capacity;
+            db.SaveChanges();
+
             db.Auditoriums.Add(obj);
             return db.SaveChanges() > 0;
         }
 
-        public bool DELETE(int id)
+        public bool Delete(int id)
         {
             var auditorium = Get(id);
             db.Auditoriums.Remove(auditorium);

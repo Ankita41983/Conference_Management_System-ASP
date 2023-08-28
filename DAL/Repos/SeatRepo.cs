@@ -17,7 +17,7 @@ namespace DAL.Repos
             return db.SaveChanges() > 0;
         }
 
-        public bool DELETE(int id)
+        public bool Delete(int id)
         {
             var seat = Get(id);
             db.Seats.Remove(seat);

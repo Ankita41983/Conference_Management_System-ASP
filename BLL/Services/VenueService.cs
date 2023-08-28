@@ -43,7 +43,7 @@ namespace BLL.Services
 
         public static bool Delete(int id)
         {
-            return DataAccess.VenueData().DELETE(id);
+            return DataAccess.VenueData().Delete(id);
         }
     }
 }

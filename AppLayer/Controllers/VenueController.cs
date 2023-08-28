@@ -42,7 +42,7 @@ namespace AppLayer.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("Create")]
         public HttpResponseMessage CreateVenue(VenueDTO venue)
         {

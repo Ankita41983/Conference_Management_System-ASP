@@ -18,7 +18,6 @@ namespace DAL.EF.Models
         [Required]
         public string Location { get; set; }
 
-        [Required]
         public int Capacity { get; set; }
 
         public virtual ICollection<Auditorium> Auditoriums { get; set; }

@@ -16,8 +16,6 @@ namespace BLL.DTOs
 
         [Required]
         public string Location { get; set; }
-
-        [Required]
         public int Capacity { get; set; }
     }
 }

@@ -82,6 +82,10 @@
     <Compile Include="Migrations\202308281022511_Token_created.designer.cs">
       <DependentUpon>202308281022511_Token_created.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202308281403562_auditorium_column_edited.cs" />
+    <Compile Include="Migrations\202308281403562_auditorium_column_edited.designer.cs">
+      <DependentUpon>202308281403562_auditorium_column_edited.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\AuditoriumRepo.cs" />
@@ -112,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202308281022511_Token_created.resx">
       <DependentUpon>202308281022511_Token_created.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308281403562_auditorium_column_edited.resx">
+      <DependentUpon>202308281403562_auditorium_column_edited.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

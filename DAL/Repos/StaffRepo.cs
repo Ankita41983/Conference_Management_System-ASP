@@ -10,30 +10,30 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class StaffRepo : Repo, IRepo<Staff, int, bool>, IPass<bool>
+    internal class StaffRepo : Repo, IRepo<Staff, int, bool>
     {
         public bool Add(Staff obj)
         {
-            var login = new Login();
-            login.Email = obj.Email;
-            login.Password = obj.Password;
-            db.Logins.Add(login);
-            db.SaveChanges();
+            var user = (from staff in db.Staffs
+                        where staff.Email == obj.Email
+                        select staff).SingleOrDefault();
 
-            db.Staffs.Add(obj);
-            return db.SaveChanges() > 0;
+            if(user == null)
+            {
+                var login = new Login();
+                login.Email = obj.Email;
+                login.Password = obj.Password;
+                db.Logins.Add(login);
+                db.SaveChanges();
+
+                db.Staffs.Add(obj);
+                return db.SaveChanges() > 0;
+            }
+            return false;
         }
 
-        public bool ChangePassword(string oldPassword, string newPassword, string rePassword)
-        {
-            
-            /*var user = (from login in db.Logins
-                        where login.Password == oldPassword
-                        select login).sin*/
-            return true;
-        }
-
-        public bool DELETE(int id)
+        
+        public bool Delete(int id)
         {
             var staff = Get(id);
             db.Staffs.Remove(staff);

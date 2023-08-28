@@ -17,7 +17,7 @@ namespace DAL.Repos
             return null;
         }
 
-        public bool DELETE(int id)
+        public bool Delete(int id)
         {
             throw new NotImplementedException();
         }

@@ -12,21 +12,19 @@ namespace DAL.Repos
     {
         public bool Add(Venue obj)
         {
+            obj.Capacity = 0;
             db.Venues.Add(obj);
             return db.SaveChanges() > 0;
         }
 
-        public bool DELETE(int id)
+        public bool Delete(int id)
         {
             var venue = Get(id);
             db.Venues.Remove(venue);
             return db.SaveChanges() > 0;
         }
 
-        public bool Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public List<Venue> Get()
         {

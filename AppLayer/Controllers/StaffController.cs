@@ -100,8 +100,8 @@ namespace AppLayer.Controllers
                                        select new
                                        {
                                            auditorium.Id,
-                                           auditorium.Name,
-                                           auditorium.Capacity,
+                                           auditorium.A_Name,
+                                           auditorium.A_Capacity,
                                            bookedseats = (from seat in db.Seats
                                                           where seat.Auditorium_id == auditorium.Id
                                                           select seat).Count()
@@ -115,7 +115,7 @@ namespace AppLayer.Controllers
                                       ven.Capacity,
                                       auditoriums = (from aud in db.Auditoriums
                                                      where aud.Venue_id == ven.Id
-                                                     select new { aud.Id, aud.Capacity }).ToList()
+                                                     select new { aud.Id, aud.A_Capacity }).ToList()
                                   });
                 return Request.CreateResponse(new { venues, auditoriums, bookedSeats, auditoriumSeats, venueList });
             }
