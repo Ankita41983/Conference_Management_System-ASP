@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DAL.Interfaces
 {
-    public interface IRepo<TYPE, ID, RET>
+    public interface IRepo<CLASS, ID, RET>
     {
-        List<TYPE> Get();
-        TYPE Get(ID id);
-        RET Create(TYPE obj);
-        RET Update(TYPE obj);
+        List<CLASS> Get();
+        CLASS Get(ID id);
+        RET Create(CLASS obj);
+        RET Update(CLASS obj);
         bool Delete(ID id);
     }
 }
