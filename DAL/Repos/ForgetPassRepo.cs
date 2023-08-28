@@ -12,7 +12,7 @@ namespace DAL.Repos
     {
         public static bool SetOTP(PassOTP obj)
         {
-            var db = new ConferenceContext();
+            var db = new CTSContext();
             db.PassOTPs.Add(obj);
             return db.SaveChanges() > 0;
         }

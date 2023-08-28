@@ -12,7 +12,7 @@ namespace DAL.Repos
 {
     internal class StaffRepo : Repo, IRepo<Staff, int, bool>
     {
-        public bool Add(Staff obj)
+        public bool Create(Staff obj)
         {
             var user = (from staff in db.Staffs
                         where staff.Email == obj.Email
@@ -20,7 +20,7 @@ namespace DAL.Repos
 
             if(user == null)
             {
-                var login = new Login();
+                var login = new StaffLogin();
                 login.Email = obj.Email;
                 login.Password = obj.Password;
                 db.Logins.Add(login);

@@ -92,16 +92,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Auth\Logged.cs" />
+    <Compile Include="Auth\StaffLogged.cs" />
     <Compile Include="Controllers\AuditoriumController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\StaffLoginController.cs" />
     <Compile Include="Controllers\SeatController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Controllers\VenueController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\StaffLoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Interfaces
 {
-    public interface IAuth
+    public interface IStaffAuth
     {
-        Login Authenticate(string email, string pass);
+        StaffLogin Authenticate(string email, string pass);
     }
 }

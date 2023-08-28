@@ -10,7 +10,7 @@ namespace DAL.Repos
 {
     internal class VenueRepo : Repo, IRepo<Venue, int, bool>
     {
-        public bool Add(Venue obj)
+        public bool Create(Venue obj)
         {
             obj.Capacity = 0;
             db.Venues.Add(obj);

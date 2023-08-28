@@ -10,24 +10,24 @@ using AutoMapper;
 
 namespace BLL.Services
 {
-    public class LoginService
+    public class StaffLoginService
     {
-        public static TokenDTO Login(string email, string pass)
+        public static StaffTokenDTO Login(string email, string pass)
         {
             var user = DataAccess.AuthData().Authenticate(email, pass);
             if (user != null)
             {
-                var token = new Token();
+                var token = new StaffToken();
                 token.TokenKey = Guid.NewGuid().ToString();
                 token.Email = user.Email;
                 token.CreatedAt = DateTime.Now;
                 token.ExpiredAt = null;
-                var tk = DataAccess.TokensData().Add(token);
+                var tk = DataAccess.TokensData().Create(token);
                 var config = new MapperConfiguration(cfg => {
-                    cfg.CreateMap<Token, TokenDTO>();
+                    cfg.CreateMap<StaffToken, StaffTokenDTO>();
                 });
                 var mapper = new Mapper(config);
-                var data = mapper.Map<TokenDTO>(tk);
+                var data = mapper.Map<StaffTokenDTO>(tk);
                 return data;
             }
             return null;

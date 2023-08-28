@@ -31,7 +31,7 @@ namespace BLL.Services
         {
             var mapper = MapperService<VenueDTO, Venue>.GetMapper();
             var map = mapper.Map<Venue>(venue);
-            return DataAccess.VenueData().Add(map);
+            return DataAccess.VenueData().Create(map);
         }
 
         public static bool Update(VenueDTO venue)

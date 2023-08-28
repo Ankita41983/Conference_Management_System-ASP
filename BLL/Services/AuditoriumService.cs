@@ -30,7 +30,7 @@ namespace BLL.Services
         {
             var mapper = MapperService<AuditoriumDTO, Auditorium>.GetMapper();
             var map = mapper.Map<Auditorium>(Auditorium);
-            return DataAccess.AuditoriumData().Add(map);
+            return DataAccess.AuditoriumData().Create(map);
         }
 
         public static bool Update(AuditoriumDTO Auditorium)

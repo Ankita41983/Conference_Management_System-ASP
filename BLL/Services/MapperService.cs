@@ -22,18 +22,3 @@ namespace BLL.Services
      }
 }
 
-/*{
-    "Name" : "ANkita",
-    "Email" : "a@ex.com",
-    //key     value
-}*/
-/*{
-    "Name" : "ANkita",
-    "Email" : "a@ex.com",
-    //key     value
-}*/
-/*{
-    "Name" : "ANkita",
-    "Email" : "a@ex.com",
-    //key     value
-}*/

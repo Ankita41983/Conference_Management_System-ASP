@@ -21,7 +21,7 @@ namespace AppLayer.Controllers
         {
             try
             {
-                var db = new ConferenceContext();
+                var db = new CTSContext();
                 var staff = (from s in db.Staffs
                              where s.Email == fp.Email
                              select s).SingleOrDefault();
@@ -86,7 +86,7 @@ namespace AppLayer.Controllers
         {
             try
             {
-                var db = new ConferenceContext();
+                var db = new CTSContext();
                 var venues = (from venue in db.Venues
                               select venue).Count();
 

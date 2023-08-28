@@ -29,13 +29,13 @@ namespace DAL
         {
             return new VenueRepo();
         }
-        public static IAuth AuthData()
+        public static IStaffAuth AuthData()
         {
-            return new LoginRepo();
+            return new StaffLoginRepo();
         }
-        public static IRepo<Token, int, Token> TokensData()
+        public static IRepo<StaffToken, int, StaffToken> TokensData()
         {
-            return new TokenRepo();
+            return new StaffTokenRepo();
         }
     }
 }

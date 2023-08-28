@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.EF.Models
+namespace BLL.DTOs
 {
-    public class Token
+    public class StaffTokenDTO
     {
         public int Id { get; set; }
         public string TokenKey { get; set; }
-        [ForeignKey("Login")]
         public string Email { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? ExpiredAt { get; set; }
-        public virtual Login Login { get; set; }
     }
 }

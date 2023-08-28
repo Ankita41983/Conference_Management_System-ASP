@@ -9,10 +9,10 @@ namespace DAL.Repos
 {
     internal class Repo
     {
-        internal ConferenceContext db;
+        internal CTSContext db;
         internal Repo()
         {
-            db = new ConferenceContext();
+            db = new CTSContext();
         }
     }
 }

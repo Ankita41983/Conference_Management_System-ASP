@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class TokenRepo : Repo, IRepo<Token, int, Token>
+    internal class StaffTokenRepo : Repo, IRepo<StaffToken, int, StaffToken>
     {
-        public Token Add(Token obj)
+        public StaffToken Create(StaffToken obj)
         {
             db.Tokens.Add(obj);
             if (db.SaveChanges() > 0) return obj;
@@ -22,17 +22,17 @@ namespace DAL.Repos
             throw new NotImplementedException();
         }
 
-        public List<Token> Get()
+        public List<StaffToken> Get()
         {
             return db.Tokens.ToList();
         }
 
-        public Token Get(int id)
+        public StaffToken Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Token Update(Token obj)
+        public StaffToken Update(StaffToken obj)
         {
             throw new NotImplementedException();
         }

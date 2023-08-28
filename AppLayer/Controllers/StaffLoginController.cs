@@ -10,13 +10,13 @@ using System.Web.Http;
 
 namespace AppLayer.Controllers
 {
-    public class LoginController : ApiController
+    public class StaffLoginController : ApiController
     {
         [HttpPost]
         [Route("api/login")]
-        public HttpResponseMessage Login(LoginModel data)
+        public HttpResponseMessage Login(StaffLoginModel data)
         {
-            var token = LoginService.Login(data.Email, data.Password);
+            var token = StaffLoginService.Login(data.Email, data.Password);
             if (token != null)
             {
                 return Request.CreateResponse(HttpStatusCode.OK, token);

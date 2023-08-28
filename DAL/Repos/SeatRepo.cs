@@ -11,7 +11,7 @@ namespace DAL.Repos
 {
     internal class SeatRepo : Repo, IRepo<Seat, int, bool>
     {
-        public bool Add(Seat obj)
+        public bool Create(Seat obj)
         {
             db.Seats.Add(obj);
             return db.SaveChanges() > 0;

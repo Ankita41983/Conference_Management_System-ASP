@@ -22,7 +22,7 @@ namespace BLL.Services
 
         public static bool Verify(ForgetPassDTO obj)
         {
-            var db = new ConferenceContext();
+            var db = new CTSContext();
             var isValidUser = (from data in db.PassOTPs
                            where data.OTP == obj.OTP
                            select data).SingleOrDefault();
@@ -61,7 +61,7 @@ namespace BLL.Services
         {
             var mapper = MapperService<StaffDTO, Staff>.GetMapper();
             var map = mapper.Map<Staff>(staff);
-            return DataAccess.StaffData().Add(map);
+            return DataAccess.StaffData().Create(map);
         }
 
         public static bool Update(StaffDTO staff)

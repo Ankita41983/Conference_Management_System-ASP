@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class LoginRepo : Repo, IAuth
+    internal class StaffLoginRepo : Repo, IStaffAuth
     {
-        public Login Authenticate(string email, string pass)
+        public StaffLogin Authenticate(string email, string pass)
         {
             var user = from u in db.Logins
                        where u.Email.Equals(email)

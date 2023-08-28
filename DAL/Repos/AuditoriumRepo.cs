@@ -11,7 +11,7 @@ namespace DAL.Repos
 {
     internal class AuditoriumRepo : Repo, IRepo<Auditorium, int, bool>
     {
-        public bool Add(Auditorium obj)
+        public bool Create(Auditorium obj)
         {
             var venue = (from v in db.Venues
                          where v.Id == obj.Venue_id

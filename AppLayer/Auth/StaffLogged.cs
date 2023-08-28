@@ -9,7 +9,7 @@ using System.Web.Http.Filters;
 
 namespace AppLayer.Auth
 {
-    public class Logged : AuthorizationFilterAttribute
+    public class StaffLogged : AuthorizationFilterAttribute
     {
         public override void OnAuthorization(HttpActionContext actionContext)
         {
@@ -21,7 +21,7 @@ namespace AppLayer.Auth
             else
             {
                 var tk = token.ToString();
-                if (tk != null && !LoginService.IsTokenValid(tk))
+                if (tk != null && !StaffLoginService.IsTokenValid(tk))
                 {
                     actionContext.Response = actionContext.Request.CreateResponse(System.Net.HttpStatusCode.Unauthorized, new { Msg = "Supplied token is invalid or expired" });
                 }
